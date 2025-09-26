@@ -1,7 +1,6 @@
 /**
  * Enhanced product controller with better error handling
  */
-
 import { factories } from '@strapi/strapi';
 import { 
   ValidationError, 
