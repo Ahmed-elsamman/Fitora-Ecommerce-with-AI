@@ -1,5 +1,8 @@
 // import type { Core } from '@strapi/strapi';
 
+// إصلاح مشكلة SSL
+import './ssl-fix';
+
 export default {
   /**
    * An asynchronous register function that runs before

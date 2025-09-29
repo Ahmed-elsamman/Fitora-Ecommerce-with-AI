@@ -32,6 +32,10 @@ export default ({ env }) => {
         password: env('DATABASE_PASSWORD', 'strapi'),
         ssl: env.bool('DATABASE_SSL', false) ? {
           rejectUnauthorized: false, // مطلوب لـ Supabase
+          ca: undefined,
+          key: undefined,
+          cert: undefined,
+          checkServerIdentity: () => undefined, // تجاهل فحص الهوية
         } : false,
         schema: env('DATABASE_SCHEMA', 'public'),
       },
@@ -50,6 +54,10 @@ export default ({ env }) => {
       client,
       ...connections[client],
       acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
+      timezone: 'UTC',
+      ssl: {
+        rejectUnauthorized: false
+      }
     },
   };
 };
