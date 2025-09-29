@@ -136,3 +136,4 @@ FROM information_schema.columns
 WHERE data_type LIKE '%timestamp%' 
    OR data_type LIKE '%date%';
 
+
